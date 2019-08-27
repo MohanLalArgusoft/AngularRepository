@@ -1,0 +1,113 @@
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3 style="text-align: center">STUDENT REPORT</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Welcome {{username}}</p>
+            <li>
+                <a class="nav-link" [routerLink]="['/user']" routerLinkActive="active">Home</a>
+            </li>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">CRUD
+                    OPERATION</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a class="nav-link" [routerLink]="['/create']" routerLinkActive="active">CREATE</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" [routerLink]="['/read']" routerLinkActive="active">READ</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" [routerLink]="['/update']" routerLinkActive="active">UPDATE</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">DELETE</a>
+                    </li> -->
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a (click)="logout()">LogOut</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content">
+        
+        <div class="continer-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="row" style="margin-top:40px; padding:20px; background-color:#eff0f2;border-radius:15px;
+                    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+                    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+                    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+                        <div class="col-sm-12" style="text-align: center; text-decoration-line: underline;">
+                            <h1>STUDENT REPORT APPLICATION</h1>
+                        </div>
+                        <div class="col-sm-12" style="text-align:center;">
+                            CREATE STUDENT RECORD
+                        </div>
+
+                        <div class="col-sm-12">
+                            <form [formGroup]="studentForm">
+                                <div class="form-group">
+                                    <label for="exampleInputrollno">Roll No</label>
+                                    <input formControlName="rollno" type="number" class="form-control"
+                                        id="exampleInputrollno" aria-describedby="rollnoHelp"
+                                        placeholder="Enter student Roll No">
+                                    <small id="rollnoHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputstudentname">Name</label>
+                                    <input formControlName="studentname" type="text" class="form-control"
+                                        id="exampleInputstudentname" aria-describedby="nameHelp"
+                                        placeholder="Student Name">
+                                    <small id="nameHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ageInput">Age</label>
+                                    <input formControlName="age" type="number" class="form-control" id="ageInput"
+                                        aria-describedby="ageHelp" placeholder="age">
+                                    <small id="ageHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="totalInput">Total Mark</label>
+                                    <input formControlName="total" type="number" class="form-control" id="totalInput"
+                                        aria-describedby="totalHelp" placeholder="total">
+                                    <small id="totalHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group" style="text-align:center;">
+                                    <button type="button" class="btn btn-dark" (click)="submit()">Submit</button>
+                                    <button type="button" class="btn btn-secondary" (click)="loaddata()">Load</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
